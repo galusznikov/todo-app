@@ -13,7 +13,7 @@ addButton.addEventListener("click", function () {
         li.querySelector(".delete").addEventListener("click", function() {
       li.remove();
     });
-    
+
     taskList.appendChild(li);
     taskInput.value = "";
   }
