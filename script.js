@@ -8,7 +8,12 @@ addButton.addEventListener("click", function () {
   const categoryIcon = taskCategory.value;
   if (taskText !== "") {
     const li = document.createElement("li");
-    li.textContent = `${categoryIcon} ${taskText}`;
+    li.innerHTML = `${categoryIcon} ${taskText} <button class="delete">Usuń</button>`;
+
+        li.querySelector(".delete").addEventListener("click", function() {
+      li.remove();
+    });
+    
     taskList.appendChild(li);
     taskInput.value = "";
   }
