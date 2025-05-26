@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="pl">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ToDo App</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div class="container">
-            <h1>Lista zadań</h1>
+<head>
+  <meta charset="UTF-8" />
+  <title>ToDo App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Lista zadań</h1>
+    
+    <div class="task-input">
+      <input type="text" id="new-task" placeholder="Wpisz nowe zadanie..." />
+        <select id="task-category">
+        <option value="🛒">Zakupy</option>
+        <option value="🔧">Naprawa</option>
+        <option value="🏛️">Urząd</option>
+        <option value="❗️">Inne</option>
+      </select>
+      <button id="add-task">Dodaj</button>
+    </div>
+    <ul id="task-list"></ul>
+  </div>
 
-            <div class="task-input">
-                <input typ="text" id="nowe-zadanie" placeholder="Wpisz nowe zadanie" />
-                <button id="dodaj-zadanie">Dodaj</button>
-            </div>
-
-            <ul id="lista-zadan"></ul>
-        </div>
+  <script src="script.js"></script>
+</body>
+</html>
 
         <script scr="script.js"></script>
     </body>
