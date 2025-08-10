@@ -10,9 +10,27 @@ addButton.addEventListener("click", function () {
     const li = document.createElement("li");
     li.innerHTML = `${categoryIcon} ${taskText} <button class="delete">Usuń</button>`;
 
-        li.querySelector(".delete").addEventListener("click", function() {
-      li.remove();
+    //przycisk usunięcia
+
+      li.querySelector(".delete").addEventListener("click", function() {
+        event.stopPropagation();
+        li.remove();
     });
+
+    //oznaczanie zadań jako wykonane
+        li.addEventListener("click", function() {
+          const existingCheck = li.querySelector(".checkmark");
+          if (existingCheck) {
+            existingCheck.remove();
+          }
+          else {
+            const check = document.createElement("span");
+            check.textContent = " ✔️";
+            check.classList.add("checkmark");
+            check.style.color = "green";
+            li.appendChild(check);
+          }
+        });
 
     taskList.appendChild(li);
     taskInput.value = "";
